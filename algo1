@@ -1,0 +1,26 @@
+ALGORITHM nb-character
+VAR
+    var phrase:STRING[20];
+    var nb_char:INTEGER:=0;
+    var nb_vowel:INTEGER:=0;
+    var nb_nots:INTEGER:=1
+
+BEGIN
+    Read(phrase);
+    
+        FOR i FROM 0 TO phrase.length STEP 1 DO
+        IF (phrase[i]=" ") THEN
+            nb_char:=nb_char+1;
+            nb_nots:=nb_nots+1;
+        END_IF
+    END_FOR
+
+    FOR i FROM 0 TO phrase.length STEP 1 DO
+    IF (phrase[i]:="a" OR phrase[i]:="e" OR phrase[i]:="i" OR phrase[i]:="o" OR phrase[i]:="u" OR phrase[i]:="y")
+    THEN 
+    nb_vowel:=nb_vowel+1;
+    END_IF
+    END_FOR
+    write(nb_char)
+    write(nb_vowel)
+END
